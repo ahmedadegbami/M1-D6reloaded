@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 50%;
+        }
+        img {
+            width: 150PX;
+            padding: 0px;
+        }
+
+        td, th {
+            margin-left: 0;
+            border: solid black;
+            padding: 2em;
+            font-size: 1.5ch;
+        }
+
+        footer{
+            text-align: center;
+        }
+        button{
+            margin-top: 1em;
+        }
+        
+       
+
+        .title {
+            text-decoration: none;
+            text-align: center;
+            margin-left: 50px;
+            
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        input, textarea {
+            border-style:inset;
+            border: transparent white;
+            border-color: black;
+            border-radius: 2ch;
+            padding: 0.5ch;
+        
+        }
+
+        
+    </style>
+</head>
+<body >
+    <h1 > Ahmed Furnitures</h1>
+
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td><img src="image/dinng-table.jpeg" alt="a dinning-table"><br><a href="https://www.crateandbarrel.com/hayes-48-round-acacia-dining-table/s314111" target="_blank">VIEW</a></td>
+            <td>Hayes 48" Table</td>
+            <td>Hayes' open fretwork </td>
+            <td>€1,099.00</td>
+        </tr>
+
+        <tr>
+            <td><img src="image/dinning-chair.jpeg" alt="a dinning-chair"><br><a href="https://www.crateandbarrel.com/taj-brown-woven-leather-dining-chair/s292447" target="_blank">VIEW</a></td>
+            <td>Taj Brown Woven Leather Dining Chair</td>
+            <td>The mid-century woven chair is having a modern moment in Taj. </td>
+            <td>€499.00</td>
+        </tr>
+
+        <tr>
+            <td><img src="image/tv-stand.jpeg" alt="a tv-stand"><br><a href="https://www.crateandbarrel.com/prairie-80-media-console/s222655" target="_blank">VIEW</a></td>
+            <td>Prairie 80" Media Console</td>
+            <td>Woven fiber on solid sungkai wood gives our Prairie media console a beachy, breezy feel. </td>
+            <td>€1,799.00</td>
+        </tr>
+
+        <tr>
+            <td><img src="image/sofa.jpeg" alt="a sofa"><br><a href="https://www.crateandbarrel.com/hague-mid-century-sofa/s411953" target="_blank">VIEW</a></td>
+            <td>Hague Mid-Century Sofa</td>
+            <td>Mid-century modern details reassemble in our up-to-the-minute Hague sofa. </td>
+            <td>€1,899.00</td>
+        </tr>
+
+        <tr>
+            <td><img src="image/chair.jpeg" alt="a chair"><br><a href="https://www.crateandbarrel.com/ankara-natural-cane-chair-with-ivory-cushion/s377081" target="_blank">VIEW</a></td>
+            <td>Ankara Natural Cane Chair with Ivory Cushion</td>
+            <td>Our best-selling Ankara chair tries on a new look in on-trend cane.  </td>
+            <td >799.00</td>
+        </tr>
+    </table>
+
+    <div>
+        <p>E-mail:<input type="email" placeholder="Enter your email address" style="width: 30%; height: 8px;"></p>
+        <textarea cols="77" rows="10" placeholder="Your messages" style="display: block;"></textarea>
+        <button style="display: block;"> Send</button>
+    </div>
+
+    <footer>
+        
+        <h4> Hauptbahnof Weg 102, 22005, Hamburg </h4>
+    </footer>
+    <script>
+    // EX7: Write a function to change the h1 text to something else
+
+     
+    
+    // function changeH1text(){
+
+    //     let changeH1Node = document.getElementById("id01");
+    //       changeH1Node.innerHTML = "Strive furnitures";
+    //   }
+    //   changeH1text()
+
+    function changeH1text() {
+        document.getElementsByTagName('h1')[0].innerText = 'Strive furniture'
+    }
+
+
+    // EX8: Write a function to change the page background color
+    // function changePageBackground() {
+    //         document.getElementById("body").style.backgroundColor = "white";
+    //     }
+
+    // changePageBackground()
+
+    function changePageBackground() {
+        document.querySelector('body').style.backgroundColor = 'green'
+    }
+
+// EX9: Write a function to change the footer address with a fake one
+
+    // function changeFooter() {
+
+    //     let changeFooterNode = document.getElementById("footer");
+    //     changeFooterNode.innerHTML = "<h4> Tel: 017773636364554 <br> Unna Weg 102, 22865, Berlin </h4>";
+    // }
+    // changeFooter()
+
+
+    function changeFakeadresss() {
+        document.querySelector('footer > h4:nth-child(1)').innerText = 'Unna Weg 102, 22865, Berlin'
+    }
+
+    //EX10: Write a function to add a CSS class to every Amazon link
+    function addClassTolinks(){
+        let allLinksNode = document.querySelectorAll("a")
+        for (let i = 0; i < allLinksNode.length; i++){
+            allLinksNode[i].href = "www.amazon.com"
+            
+            // allLinksNode[i].classList.add("title")
+           
+    }
+// }
+//     addClassTolinks()
+
+    function addClassTolinks() {
+        for (let node of document.querySelectorAll('a'))
+            node.classList.add('title')
+
+    }
+
+    //EX11: Write a function to toggle a CSS class for all the images in the table; that class should set the visibility of the image
+    function toggleImgClass() {
+        let allImageLink = document.querySelectorAll("img")
+        for (let i = 0; i < allImageLink.length; i++){
+            allImageLink[i].classList.toggle("hidden")
+        }
+    }
+
+    toggleImgClass()
+
+
+    //EX12: Write a function to color the price of the products in a different one every time it's invoked
+    
+    function setRandomColor() {
+        let color = getRandomColor()
+        let colorNode = document.querySelectorAll('tr > td:nth-child(4)')
+        for (let i = 0; i < colorNode.length; i++) {
+            colorNode[i].style.color = color
+            
+    }
+         
+    }
+
+    function getRandomColor() {
+        let red = Math.round(Math.random() * 255)
+        let green = Math.round(Math.random() * 255)
+        let blue = Math.round(Math.random() * 255)
+
+        return "rgb(" + red + ", " + green + ", " + blue + ")"
+    }
+
+    function putRandomColor() {
+        let colour = randomColours()
+        let titleNode = document.querySelectorAll('tr > td:nth-child(2)')
+        for ( let title of titleNode)
+        title.style.color = colour
+
+
+    }
+
+    function randomColours() {
+        let red = Math.round(Math.random() * 255)
+        let green = Math.round(Math.random() * 255)
+        let blue = Math.round(Math.random() * 255)
+
+        return "rgb(" + red + ", " + green + ", " + blue + ")"
+    }
+}
+    
+
+    </script>
+    
+</body>
+</html>
